@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_id: MyString
+  test_id: MyString
+  rate: MyString
+  date: 2022-06-25 02:26:06
+
+two:
+  patient_id: MyString
+  test_id: MyString
+  rate: MyString
+  date: 2022-06-25 02:26:06

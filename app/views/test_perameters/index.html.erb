@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex flex-row-reverse">
+  <div class="p-2">
+    <%= link_to "Add New Parameter", new_test_perameter_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<h1>Test perameters</h1>
+  <table class="table">
+    <thead class="table-dark">
+    <th>Id</th>
+    <TH>Parameter Name</TH>
+    <th>Test Name</th>
+    <th>Range</th>
+    <th>Unit</th>
+    </thead>
+    <tbody>
+    <% @test_perameters.each do |test_perameter| %>
+      <tr>
+        <td><%= link_to test_perameter.id, test_perameter %></td>
+        <td><%= test_perameter.name%></td>
+        <td><%= test_perameter.test.name %></td>
+        <td><%= test_perameter.range %></td>
+        <td><%= test_perameter.unit %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

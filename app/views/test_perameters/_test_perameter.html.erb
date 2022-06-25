@@ -1,0 +1,22 @@
+<div id="<%= dom_id test_perameter %>">
+  <table class="table">
+    <thead class="table-dark">
+    <th>Parameter Name</th>
+    <th>Range</th>
+    <th>Unit</th>
+    <th>Category</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <td><%= test_perameter.name %></td>
+    <td><%= test_perameter.range %></td>
+    <td><%= test_perameter.unit %></td>
+    <td><%= test_perameter.category.name %></td>
+    <td>
+      <%= link_to "Edit", edit_test_perameter_path(@test_perameter), class: 'btn btn-primary' %>
+      <%= link_to "Back to test perameters", test_perameters_path,class: 'btn btn-success' %>
+    </td>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs text-light">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="<%= patients_path %>">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Menu</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="<%= patients_path %>">Patients</a></li>
+      <li><a class="dropdown-item" href="<%= doctors_path %>">Doctors</a></li>
+      <li><a class="dropdown-item" href="<%= tests_path %>">Test</a></li>
+      <li><a class="dropdown-item" href="<%= test_perameters_path %>">Test Parameters</a></li>
+      <li><a class="dropdown-item" href="<%= categories_path %>">Test Categories</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="<%= patient_cases_path %>">Cases</a></li>
+      <li><a class="dropdown-item" href="<%= patient_reports_path %>">Reports</a></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="<%= new_patient_case_path %>">New Case</a>
+  </li>
+
+</ul>

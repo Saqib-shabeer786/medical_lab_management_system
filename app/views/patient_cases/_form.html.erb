@@ -1,0 +1,53 @@
+<%= form_with(model: patient_case) do |form| %>
+  <% if patient_case.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(patient_case.errors.count, "error") %> prohibited this patient_case from being saved:</h2>
+
+      <ul>
+        <% patient_case.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :patient_id,"Select Patient", style: "display: block", class:'form-label' %>
+    <%= form.select :patient_id, options_from_collection_for_select(Patient.all, :id, :name), {class: "form-select"} %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :doctor_id,"Select Doctor", style: "display: block", class:'form-label' %>
+    <%= form.select :doctor_id, options_from_collection_for_select(Doctor.all, :id, :name),{class: "form-select"} %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :collection_date, style: "display: block", class:'form-label' %>
+    <%= form.datetime_field :collection_date, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :reporting_date, style: "display: block", class:'form-label' %>
+    <%= form.datetime_field :reporting_date, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :total_amount, style: "display: block", class:'form-label' %>
+    <%= form.text_field :total_amount, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :paid, style: "display: block", class:'form-label' %>
+    <%= form.text_field :paid, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :due, style: "display: block", class:'form-label' %>
+    <%= form.text_field :due, class:'form-control' %>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+<% end %>
+

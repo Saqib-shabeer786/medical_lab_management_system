@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="d-flex flex-row-reverse">
+  <div class="p-2">
+    <%= link_to "Add New Patient", new_patient_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<h1>Patients</h1>
+
+<div id="patients">
+  <table class="table">
+    <thead class="table-dark">
+    <TH>Patient Id</TH>
+    <th>Visit Date</th>
+    <th>Name</th>
+    <th>Phone</th>
+    </thead>
+    <tbody>
+    <% @patients.each do |patient| %>
+    <tr>
+    <td><%= link_to patient.id, patient %></td>
+    <td><%= patient.created_at.strftime("%d %B %Y, %m %p") %></td>
+    <td><%= patient.name %></td>
+    <td><%= patient.phone %></td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

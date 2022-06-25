@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_id: MyString
+  doctor_id: MyString
+  collection_date: 2022-06-25 04:05:59
+  reporting_date: 2022-06-25 04:05:59
+  total_amount: MyString
+  paid: MyString
+  due: MyString
+
+two:
+  patient_id: MyString
+  doctor_id: MyString
+  collection_date: 2022-06-25 04:05:59
+  reporting_date: 2022-06-25 04:05:59
+  total_amount: MyString
+  paid: MyString
+  due: MyString

@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex flex-row-reverse">
+  <div class="p-2">
+    <%= link_to "Add New Doctor", new_doctor_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<h1>Doctors</h1>
+<div id="doctors">
+  <table class="table">
+    <thead class="table-dark">
+    <TH>Name</TH>
+    <th>Gender</th>
+    <th>Phone</th>
+    </thead>
+    <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><%= link_to doctor.id, doctor %></td>
+        <td><%= doctor.sex%></td>
+        <td><%= doctor.phone %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

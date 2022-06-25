@@ -1,0 +1,29 @@
+<div id="<%= dom_id test %>">
+  <div class="d-flex flex-row-reverse">
+    <strong>Name</strong> <%= test.name %>
+  </div>
+  <table class="table">
+    <thead class="table-dark">
+    <th>Parameter Name</th>
+    <th>Range</th>
+    <th>Unit</th>
+    <th>Category</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <%= @test.test_perameters.each do |test_parameter| %>
+    <tr>
+      <td><%= test_parameter.name %></td>
+      <td><%= test_parameter.range %></td>
+      <td><%= test_parameter.unit %></td>
+      <td><%= test_parameter.category.name %></td>
+      <td>
+        <%= link_to "Edit", edit_test_perameter_path(test_parameter), class: 'btn btn-primary' %>
+        <%= link_to "Back to test", tests_path,class: 'btn btn-success' %>
+      </td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

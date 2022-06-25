@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex flex-row-reverse">
+  <div class="p-2">
+    <%= link_to "Add New Test", new_test_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<h1>Tests</h1>
+<div id="tests">
+  <table class="table">
+    <thead class="table-dark">
+    <th>Id</th>
+    <TH>Name</TH>
+    <th>Rate</th>
+    </thead>
+    <tbody>
+    <% @tests.each do |test| %>
+      <tr>
+        <td><%= link_to test.id, test %></td>
+        <td><%= test.name%></td>
+        <td><%= test.rate %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

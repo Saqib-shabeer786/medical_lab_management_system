@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Patent tests</h1>
+
+<div id="patent_tests">
+  <% @patent_tests.each do |patent_test| %>
+    <%= render patent_test %>
+    <p>
+      <%= link_to "Show this patent test", patent_test %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New patent test", new_patent_test_path %>

@@ -1,0 +1,24 @@
+<div id="<%= dom_id patient %>">
+  <table class="table">
+    <thead class="table-dark">
+    <th>Visit Date</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Phone</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <td><%= patient.created_at %></td>
+    <td><%= patient.name %></td>
+    <td><%= patient.age %></td>
+    <td><%= patient.sex %></td>
+    <td><%= patient.phone %></td>
+    <td>
+      <%= link_to "Edit", edit_patient_path(@patient),class: 'btn btn-success' %>
+      <%= link_to "Back to patients", patients_path, class: 'btn btn-primary' %>
+    </td>
+    </tbody>
+  </table>
+
+</div>

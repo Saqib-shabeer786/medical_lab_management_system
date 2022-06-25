@@ -1,0 +1,29 @@
+<div id="<%= dom_id patient_case %>">
+  <table class="table">
+    <thead class="table-dark">
+    <th>Case Id</th>
+    <th>Patient Name</th>
+    <th>Doctor</th>
+    <th>Collection Date</th>
+    <th>Reporting Date</th>
+    <th>Total Amount</th>
+    <th>Paid</th>
+    <th>Due</th>
+    <th>Actions</th>
+    </thead>
+    <tbody>
+    <td><%= patient_case.id %></td>
+    <td><%= patient_case.patient_id %></td>
+    <td><%= patient_case.doctor_id %></td>
+    <td><%= patient_case.collection_date.strftime("%d %B %Y, %m %p") %></td>
+    <td><%= patient_case.reporting_date.strftime("%d %B %Y, %m %p") %></td>
+    <td><%= patient_case.total_amount %></td>
+    <td><%= patient_case.paid %></td>
+    <td><%= patient_case.due %></td>
+    <td>
+      <%= link_to "Edit", edit_patient_case_path(@patient_case), class: 'btn btn-primary' %>
+      <%= link_to "Back to patient cases", patient_cases_path, class: 'btn btn-success' %>
+    </td>
+    </tbody>
+  </table>
+</div>

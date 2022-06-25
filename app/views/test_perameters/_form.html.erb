@@ -1,0 +1,40 @@
+<%= form_with(model: test_perameter) do |form| %>
+  <% if test_perameter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(test_perameter.errors.count, "error") %> prohibited this test_perameter from being saved:</h2>
+
+      <ul>
+        <% test_perameter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class:'form-label' %>
+    <%= form.text_field :name, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :range, style: "display: block", class:'form-label' %>
+    <%= form.text_field :range, class:'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :unit, style: "display: block", class:'form-label' %>
+    <%= form.text_field :unit, class:'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :category_id, "Category", style: "display: block", class:'form-label' %>
+    <%= form.select :category_id, options_from_collection_for_select(Category.all, :id, :name), class:'form-select' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :test_id, style: "display: block", class:'form-label' %>
+    <%= form.select :test_id, options_from_collection_for_select(Test.all, :id, :name), class:'form-select' %>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+<% end %>
